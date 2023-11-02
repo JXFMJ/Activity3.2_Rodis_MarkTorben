@@ -1,8 +1,5 @@
-
-/*List the player names and their corresponding hero names that are actively in
-use during gameplay, excluding those with inactive heroes.*/
-
-SELECT p.player_name, h.hero_name
-FROM public.player p
-JOIN public.hero h ON p.hero_id = h.hero_id
-WHERE h.is_active = true;
+-- Provide a list of heroes classified as archers.
+SELECT h.hero_name, c.class_name
+FROM public.hero h
+JOIN public.class c ON h.class_id = c.class_id
+WHERE c.class_name = 'Archer';
